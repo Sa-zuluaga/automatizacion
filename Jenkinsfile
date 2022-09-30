@@ -9,14 +9,14 @@ pipeline {
         stage('test-chrome') {
             steps {
                 {
-                    bat "gradlew.bat test -Dcontext=chrome -Dwebdriver.driver=chrome}"
+                    bat "gradlew.bat test -Dcontext=chrome -Dwebdriver.driver=chrome"
                 }
             }
         }
         stage('test-firefox') {
             steps {
                 {
-                    bat "gradlew.bat test -Dcontext=firefox -Dwebdriver.driver=firefox}"
+                    bat "gradlew.bat test -Dcontext=firefox -Dwebdriver.driver=firefox"
                 }
             }
         }
