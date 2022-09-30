@@ -1,0 +1,11 @@
+package com.sazuluaga.automatizacion.userinterface;
+
+
+
+import net.serenitybdd.screenplay.targets.Target;
+
+
+public class DemonBlazeCartPage {
+    public static final Target PLACE_ORDER_BUTTON = Target.the("Place Order button")
+            .locatedBy("//button[text()='Place Order']");
+}
