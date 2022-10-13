@@ -6,15 +6,15 @@ pipeline {
                 bat 'gradlew.bat clean build -x test'
             }
         }
-        stage('test-chrome') catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
+        stage('test-chrome') {
             steps {
-                bat "gradlew.bat test -Dcontext=chrome -Dwebdriver.driver=chrome"
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){bat "gradlew.bat test -Dcontext=chrome -Dwebdriver.driver=chrome"}
 
             }
         }
-        stage('test-firefox') catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE'){
+        stage('test-firefox') {
             steps {
-                bat "gradlew.bat test -Dcontext=firefox -Dwebdriver.driver=firefox"
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {bat "gradlew.bat test -Dcontext=firefox -Dwebdriver.driver=firefox"}
 
             }
         }
